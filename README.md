@@ -7,7 +7,7 @@ Convert volume slider fractions to amplitudes and nothing more.
 
 ## Theory
 
-These are utilities to help make our volume controls feel more natural. Our hearing follows a logarithmic scale. We perceive less difference between loud sounds than we do between soft sounds. We want our volume controls to mirror how we perceive sound.
+This is a utility to help make our volume controls feel more natural. Our hearing follows a logarithmic scale. We perceive less difference between loud sounds than we do between soft sounds. We want our volume controls to mirror how we perceive sound.
 
 In order to make our controls more natural, we'll use an exponential scale. We'll present the user a scale between 0 and 100%, but the percentage will actually select a percentage of a reasonably-chosen range denominated in decibels. For example, if this range is 60dB, then 50% corresponds to 50% * 60 = 30dB. However, this range is negative; it starts at -60dB and increases toward 0dB so we subtract 60dB, so 30 - 60 = -30. From here, we just convert decibels to amplitude using an established formula, amplitude = 10 ^ (db /20), so for example 10 ^ (-30/20) = 10 ^ (-1.5) = 0.03. So 50% perceived loudness yields about 3% of the total amplitude.
 
