@@ -5,8 +5,7 @@ Have you ever encountered a video or some music that was too loud and moved the 
 
 Convert volume slider fractions to amplitudes and nothing more.
 
-Theory
-=============
+## Theory
 
 These are utilities to help make our volume controls feel more natural. Our hearing follows a logarithmic scale. We perceive less difference between loud sounds than we do between soft sounds. We want our volume controls to mirror how we perceive sound.
 
@@ -15,6 +14,5 @@ In order to make our controls more natural, we'll use an exponential scale. We'l
 There are two more things to note. First, we'll express everything as percentages everywhere, so these functions take a percentage in and express a percentage out. In the previous example, perceptualToAmplitude(50%) = 3%. Second, we allow users to boost the volume of other users, and we use a different scale for perceived > 100%. We scale these to a different "boost" range, which by default is 6dB of boost.
 
 
-Usage
-=============
+## Usage
 
