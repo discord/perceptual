@@ -3,8 +3,11 @@
   "version": "1.0.0",
   "description": "Utility for converting volume control scales to amplitudes",
   "main": "dist/index.js",
-  "author": "",
+  "author": "Discord",
   "license": "MIT",
+  "scripts": {
+    "webpack": "webpack"
+  },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.1.0",
     "@typescript-eslint/parser": "^5.1.0",

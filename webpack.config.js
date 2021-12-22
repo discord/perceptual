@@ -19,5 +19,6 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
         library: 'perceptual',
         libraryTarget: 'umd',
+        globalObject: 'this',
     },
 };

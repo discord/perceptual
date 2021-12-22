@@ -16,3 +16,36 @@ There are two more things to note. First, we'll express everything as percentage
 
 ## Usage
 
+### Convert Interface Value to Amplitude
+
+If you have a volume slider or other control which returns a Number from 0 to 1, the following will convert the slider's position to an amplitude.
+
+```js
+> var perceptual = require('perceptual')
+> perceptual.perceptualToAmplitude(0.5)
+0.056234132519034905
+```
+
+This tells us that the corresponding amplitude that will be perceived as 50% as loud is about 5.6%. By default, this method uses a 50dB range.
+
+From here we can apply this amplitude value to the source, e.g. to the `volume` property of a `HTMLMediaElement`. We can alternatively multiply sample amplitudes with this volume in a context where we have direct access to the samples.
+
+As a second example,
+
+```js
+> perceptual.perceptualToAmplitude(50, 100, 60)
+3.162277660168379
+```
+
+This supplies a `normalizedMax` argument to specify that we want a range from 0 to 100 instead. It also supplies a non-default dynamic range of 60dB. For these settings, 50% of the loudness corresponds to 3.2% of the amplitude.
+
+### Convert Amplitude to Interface Value
+
+`perceptual` also supplies a method to calculate from amplitudes to perceptual interface values.
+
+```js
+> perceptual.amplitudeToPerceptual(0.5)
+0.8795880017344075
+```
+
+This tells us that 50% amplitude corresponds to about 88% perceived loudness on our default 50dB range.

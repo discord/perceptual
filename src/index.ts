@@ -26,12 +26,15 @@ const DEFAULT_VOLUME_BOOST_DYNAMIC_RANGE_DB = 6;
 
 /*
  * perceptualToAmplitude takes a user-presented control value and converts to amplitude
- * perceptual: Percentage between 0 and 200
- * returns: Percentage between 0 and 200
+ * perceptual: Number between 0 and 2 * normalizedMax
+ * normalizedMax: Normalization of perceptual value, choose 1 for decimals or 100 for percentages
+ * range: Dynamic range of perceptual value from 0 to normalizedMax
+ * boostRange: Dynamic range of perceptual value from normalizedMax to 2 * normalizedMax
+ * returns: Number between 0 and 2 * normalizedMax
  */
 export function perceptualToAmplitude(
   perceptual: number,
-  normalizedMax: number = 100,
+  normalizedMax: number = 1,
   range: number = DEFAULT_VOLUME_DYNAMIC_RANGE_DB,
   boostRange: number = DEFAULT_VOLUME_BOOST_DYNAMIC_RANGE_DB
 ) {
@@ -49,12 +52,15 @@ export function perceptualToAmplitude(
 
 /*
  * amplitudeToPerceptual takes a volume amplitude and converts to user-presented control
- * amp: Percentage between 0 and 200
- * returns: Percentage between 0 and 200
+ * amp: Number between 0 and 2 * normalizedMax
+ * normalizedMax: Normalization of amp value, choose 1 for decimals or 100 for percentages
+ * range: Dynamic range of amp value from 0 to normalizedMax
+ * boostRange: Dynamic range of amp value from normalizedMax to 2 * normalizedMax
+ * returns: Number between 0 and 2 * normalizedMax
  */
 export function amplitudeToPerceptual(
   amp: number,
-  normalizedMax: number = 100,
+  normalizedMax: number = 1,
   range: number = DEFAULT_VOLUME_DYNAMIC_RANGE_DB,
   boostRange: number = DEFAULT_VOLUME_BOOST_DYNAMIC_RANGE_DB
 ) {
