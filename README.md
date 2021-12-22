@@ -21,7 +21,7 @@ There are two more things to note. First, we'll express everything as percentage
 If you have a volume slider or other control which returns a Number from 0 to 1, the following will convert the slider's position to an amplitude.
 
 ```js
-> var perceptual = require('perceptual')
+> var perceptual = require('@discordapp/perceptual')
 > perceptual.perceptualToAmplitude(0.5)
 0.056234132519034905
 ```
