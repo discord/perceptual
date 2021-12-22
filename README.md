@@ -28,7 +28,7 @@ If you have a volume slider or other control which returns a Number from 0 to 1,
 
 This tells us that the corresponding amplitude that will be perceived as 50% as loud is about 5.6%. By default, this method uses a 50dB range.
 
-From here we can apply this amplitude value to the source, e.g. to the `volume` property of a `HTMLMediaElement`. We can alternatively multiply sample amplitudes with this volume in a context where we have direct access to the samples.
+From here we can apply this amplitude value (0.056234) to the source, e.g. to the `volume` property of a `HTMLMediaElement`. We can alternatively multiply sample amplitudes with this volume in a context where we have direct access to the samples.
 
 As a second example,
 
