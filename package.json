@@ -1,6 +1,6 @@
 {
   "name": "@discordapp/perceptual",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Utility for converting volume control scales to amplitudes",
   "main": "dist/index.js",
   "author": "Discord",
