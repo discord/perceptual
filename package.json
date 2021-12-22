@@ -23,5 +23,8 @@
   "dependencies": {},
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "files": [
+    "dist"
+  ]
 }
