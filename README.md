@@ -39,6 +39,16 @@ As a second example,
 
 This supplies a `normalizedMax` argument to specify that we want a range from 0 to 100 instead. It also supplies a non-default dynamic range of 60dB. For these settings, 50% of the loudness corresponds to 3.2% of the amplitude.
 
+
+We can also boost the original volume using a separate dynamic range,
+
+```js
+> perceptual.perceptualToAmplitude(150, 100, 60, 6)
+141.25375446227542
+```
+
+With our 6dB boost range, 150% loudness yields 141% amplitude.
+
 ### Convert Amplitude to Interface Value
 
 `perceptual` also supplies a method to calculate from amplitudes to perceptual interface values.
