@@ -20,5 +20,8 @@
     "webpack": "^5.59.1",
     "webpack-cli": "^4.9.1"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "publishConfig": {
+    "access": "public"
+  }
 }
