@@ -5,7 +5,10 @@
   "main": "dist/index.js",
   "author": "Discord",
   "license": "MIT",
-  "repository": "https://github.com/discord/perceptual",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/discord/perceptual"
+  },
   "scripts": {
     "webpack": "webpack"
   },
