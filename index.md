@@ -4,6 +4,7 @@ Convert volume slider fractions to amplitudes and nothing more.
 
 ## Direct Ratio
   First we will demonstrate what happens when we do connect the volume slider directly to the gain of the oscillator.
+
   <button style="width: 300px;" id="play-button-1"><i class="fa fa-play" style="margin-right: 5 px;padding-right: 5px;"></i>Play Tone</button>
   <div style="width: 350px;">
     <i class="fa fa-volume-down" style="/*! height: 100%; */ font-size: 24px;"></i>
@@ -15,6 +16,7 @@ Convert volume slider fractions to amplitudes and nothing more.
 
 ## Perceptual
   Now we will demonstrate again using Perceptual's amplitude conversion.
+
   <button style="width: 300px;" id="play-button-2"><i class="fa fa-play" style="margin-right: 5 px;padding-right: 5px;"></i>Play Tone</button>
   <div style="width: 350px;">
     <i class="fa fa-volume-down" style="/*! height: 100%; */ font-size: 24px;"></i>
