@@ -67,8 +67,8 @@ import { perceptualToAmplitude } from '@discordapp/perceptual';
     volume2!.addEventListener('input', () => {
         const value = (volume2! as HTMLInputElement).valueAsNumber;
         const amp = perceptualToAmplitude(value, 100);
-        labelSlider1!.innerText = `Slider Position: ${value}%`;
-        labelAmplitude1!.innerText = `Amplitude: ${amp}%`;
+        labelSlider2!.innerText = `Slider Position: ${value}%`;
+        labelAmplitude2!.innerText = `Amplitude: ${amp.toFixed(3)}%`;
         if (state === 'stopped' || state === 'running-2') {
             gainNode.gain.value = amp / 100;
         }
