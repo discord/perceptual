@@ -1,15 +1,1 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const perceptual_1 = require("@discordapp/perceptual");
-(() => {
-    let audioCtx = new AudioContext();
-    let oscillatorNode = audioCtx.createOscillator();
-    let gainNode = audioCtx.createGain();
-    oscillatorNode.connect(gainNode);
-    gainNode.connect(audioCtx.destination);
-    oscillatorNode.type = 'sine';
-    oscillatorNode.frequency.value = 500;
-    gainNode.gain.value = 0.5;
-    oscillatorNode.start();
-    console.log(`${(0, perceptual_1.perceptualToAmplitude)(0.5)}`);
-})();
+(()=>{var e={584:function(e){e.exports=(()=>{var e={607:(e,t,r)=>{var o,n,p;!function(u){if("object"==typeof e.exports){var i=u(r(875),t);void 0!==i&&(e.exports=i)}else n=[r,t],void 0===(p="function"==typeof(o=u)?o.apply(t,n):o)||(e.exports=p)}((function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.amplitudeToPerceptual=t.perceptualToAmplitude=void 0,t.perceptualToAmplitude=function(e,t=1,r=50,o=6){if(0===e)return 0;let n;return n=e>t?(e-t)/t*o:e/t*r-r,t*Math.pow(10,n/20)},t.amplitudeToPerceptual=function(e,t=1,r=50,o=6){if(0===e)return 0;const n=20*Math.log10(e/t);let p;return p=n>0?n/o+1:(r+n)/r,t*p}}))},875:e=>{function t(e){var t=new Error("Cannot find module '"+e+"'");throw t.code="MODULE_NOT_FOUND",t}t.keys=()=>[],t.resolve=t,t.id=875,e.exports=t}},t={};function r(o){var n=t[o];if(void 0!==n)return n.exports;var p=t[o]={exports:{}};return e[o](p,p.exports,r),p.exports}return r.o=(e,t)=>Object.prototype.hasOwnProperty.call(e,t),r(607)})()}},t={};function r(o){var n=t[o];if(void 0!==n)return n.exports;var p=t[o]={exports:{}};return e[o].call(p.exports,p,p.exports,r),p.exports}(()=>{"use strict";const e=r(584);(()=>{let t=new AudioContext,r=t.createOscillator(),o=t.createGain();r.connect(o),o.connect(t.destination),r.type="sine",r.frequency.value=440,o.gain.value=.5,r.start(),console.log(`${(0,e.perceptualToAmplitude)(.5)}`)})()})()})();

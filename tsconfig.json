@@ -4,6 +4,7 @@
     "module": "commonjs",
     "strict": true,
     "skipLibCheck": true,
-    "outDir": "assets/js"
+    "outDir": "assets/js",
+    "moduleResolution": "node"
   }
 }
