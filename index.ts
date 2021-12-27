@@ -13,7 +13,7 @@ import { perceptualToAmplitude } from '@discordapp/perceptual';
     oscillatorNode.type = 'sine';
     oscillatorNode.frequency.value = 440;
     gainNode.gain.value = 0.5;
-    oscillator.start();
+    oscillatorNode.start();
 
     const playButton1 = document.getElementById('play-button-1');
     const playButton2 = document.getElementById('play-button-2');
@@ -45,5 +45,13 @@ import { perceptualToAmplitude } from '@discordapp/perceptual';
         }
     }, false);
 
-    console.log(`${perceptualToAmplitude(0.5)}`);
+    volume1!.addEventListener('input', () => {
+        const value = (volume1! as HTMLInputElement).valueAsNumber;
+        console.log(`${value}`);
+    }, false);
+
+    volume2!.addEventListener('input', () => {
+        const value = (volume2! as HTMLInputElement).valueAsNumber;
+        console.log(`${perceptualToAmplitude(value, 100)}`);
+    }, false);
 })();
