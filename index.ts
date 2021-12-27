@@ -24,6 +24,12 @@ import { perceptualToAmplitude } from '@discordapp/perceptual';
     const divVolume1 = document.getElementById('div-volume-1')!;
     const divVolume2 = document.getElementById('div-volume-2')!;
 
+    const labelPlayButton1 = document.getElementById('label-play-button-1')!;
+    const labelPlayButton2 = document.getElementById('label-play-button-2')!;
+
+    const iconPlayButton1 = document.getElementById('icon-play-button-1')!;
+    const iconPlayButton2 = document.getElementById('icon-play-button-2')!;
+
     const labelSlider1 = document.getElementById('label-slider-1')!;
     const labelSlider2 = document.getElementById('label-slider-2')!;
 
@@ -37,20 +43,25 @@ import { perceptualToAmplitude } from '@discordapp/perceptual';
         if (state === 'stopped') {
             gainNode.connect(audioCtx.destination);
             state = 'running-1';
-            playButton1.innerText = 'Stop Tone';
-            playButton2.innerText = 'Play Tone';
+            labelPlayButton1.innerText = 'Stop Tone';
+            labelPlayButton2.innerText = 'Play Tone';
+            iconPlayButton1.classList.replace('fa-play', 'fa-stop');
+            iconPlayButton2.classList.replace('fa-stop', 'fa-play');
             divVolume1.hidden = false;
             divVolume2.hidden = true;
         } else if (state === 'running-2') {
             state = 'running-1';
-            playButton1.innerText = 'Stop Tone';
-            playButton2.innerText = 'Play Tone';
+            labelPlayButton1.innerText = 'Stop Tone';
+            labelPlayButton2.innerText = 'Play Tone';
+            iconPlayButton1.classList.replace('fa-play', 'fa-stop');
+            iconPlayButton2.classList.replace('fa-stop', 'fa-play');
             divVolume1.hidden = false;
             divVolume2.hidden = true;
         } else {
             gainNode.disconnect(audioCtx.destination);
             state = 'stopped';
-            playButton1.innerText = 'Play Tone';
+            labelPlayButton1.innerText = 'Play Tone';
+            iconPlayButton1.classList.replace('fa-stop', 'fa-play');
             divVolume1.hidden = true;
         }
     }, false);
@@ -60,20 +71,25 @@ import { perceptualToAmplitude } from '@discordapp/perceptual';
         if (state === 'stopped') {
             gainNode.connect(audioCtx.destination);
             state = 'running-2';
-            playButton1.innerText = 'Play Tone';
-            playButton2.innerText = 'Stop Tone';
+            labelPlayButton1.innerText = 'Play Tone';
+            labelPlayButton2.innerText = 'Stop Tone';
+            iconPlayButton1.classList.replace('fa-stop', 'fa-play');
+            iconPlayButton2.classList.replace('fa-play', 'fa-stop');
             divVolume1.hidden = true;
             divVolume2.hidden = false;
         } else if (state === 'running-1') {
             state = 'running-2';
-            playButton1.innerText = 'Play Tone';
-            playButton2.innerText = 'Stop Tone';
+            labelPlayButton1.innerText = 'Play Tone';
+            labelPlayButton2.innerText = 'Stop Tone';
+            iconPlayButton1.classList.replace('fa-stop', 'fa-play');
+            iconPlayButton2.classList.replace('fa-play', 'fa-stop');
             divVolume1.hidden = true;
             divVolume2.hidden = false;
         } else {
             gainNode.disconnect(audioCtx.destination);
             state = 'stopped';
-            playButton2.innerText = 'Play Tone';
+            labelPlayButton2.innerText = 'Play Tone';
+            iconPlayButton2.classList.replace('fa-stop', 'fa-play');
             divVolume2.hidden = true;
         }
     }, false);

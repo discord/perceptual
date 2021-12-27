@@ -2,10 +2,10 @@ Have you ever encountered a video or some music that was too loud and moved the 
 
 Convert volume slider fractions to amplitudes and nothing more.
 
-## Direct Ratio
+## Slider Value
   First we will demonstrate what happens when we do connect the volume slider directly to the gain of the oscillator.
 
-  <button style="width: 300px;" id="play-button-1"><i class="fa fa-play" style="margin-right: 5 px;padding-right: 5px;"></i>Play Tone</button>
+  <button style="width: 300px;" id="play-button-1"><i class="fa fa-play" style="margin-right: 5 px;padding-right: 5px;" id="icon-play-button-1"></i><span id="label-play-button-1">Play Tone</span></button>
   <div id="div-volume-1" hidden=true>
     <div style="width: 350px;">
       <i class="fa fa-volume-down" style="/*! height: 100%; */ font-size: 24px;"></i>
@@ -19,7 +19,7 @@ Convert volume slider fractions to amplitudes and nothing more.
 ## Perceptual
   Now we will demonstrate again using Perceptual's amplitude conversion.
 
-  <button style="width: 300px;" id="play-button-2"><i class="fa fa-play" style="margin-right: 5 px;padding-right: 5px;"></i>Play Tone</button>
+  <button style="width: 300px;" id="play-button-2"><i class="fa fa-play" style="margin-right: 5 px;padding-right: 5px;" id="icon-play-button-2"></i><span id="label-play-button-2">Play Tone</span></button>
   <div id="div-volume-2" hidden=true>
     <div style="width: 350px;">
       <i class="fa fa-volume-down" style="/*! height: 100%; */ font-size: 24px;"></i>
