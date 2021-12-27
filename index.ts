@@ -21,6 +21,9 @@ import { perceptualToAmplitude } from '@discordapp/perceptual';
     const volume1 = document.getElementById('input-volume-1')!;
     const volume2 = document.getElementById('input-volume-2')!;
 
+    const divVolume1 = document.getElementById('div-volume-1')!;
+    const divVolume2 = document.getElementById('div-volume-2')!;
+
     const labelSlider1 = document.getElementById('label-slider-1')!;
     const labelSlider2 = document.getElementById('label-slider-2')!;
 
@@ -35,25 +38,20 @@ import { perceptualToAmplitude } from '@discordapp/perceptual';
             gainNode.connect(audioCtx.destination);
             state = 'running-1';
             playButton1.innerText = 'Stop Tone';
-            playButton2.innerText = 'Start Tone';
-            labelSlider1.hidden = false;
-            labelAmplitude1.hidden = false;
-            labelSlider2.hidden = true;
-            labelAmplitude2.hidden = true;
+            playButton2.innerText = 'Play Tone';
+            divVolume1.hidden = false;
+            divVolume2.hidden = true;
         } else if (state === 'running-2') {
             state = 'running-1';
             playButton1.innerText = 'Stop Tone';
-            playButton2.innerText = 'Start Tone';
-            labelSlider1.hidden = false;
-            labelAmplitude1.hidden = false;
-            labelSlider2.hidden = true;
-            labelAmplitude2.hidden = true;
+            playButton2.innerText = 'Play Tone';
+            divVolume1.hidden = false;
+            divVolume2.hidden = true;
         } else {
             gainNode.disconnect(audioCtx.destination);
             state = 'stopped';
-            playButton1.innerText = 'Start Tone';
-            labelSlider1.hidden = true;
-            labelAmplitude1.hidden = true;
+            playButton1.innerText = 'Play Tone';
+            divVolume1.hidden = true;
         }
     }, false);
 
@@ -62,26 +60,21 @@ import { perceptualToAmplitude } from '@discordapp/perceptual';
         if (state === 'stopped') {
             gainNode.connect(audioCtx.destination);
             state = 'running-2';
-            playButton1.innerText = 'Start Tone';
+            playButton1.innerText = 'Play Tone';
             playButton2.innerText = 'Stop Tone';
-            labelSlider1.hidden = true;
-            labelAmplitude1.hidden = true;
-            labelSlider2.hidden = false;
-            labelAmplitude2.hidden = false;
+            divVolume1.hidden = true;
+            divVolume2.hidden = false;
         } else if (state === 'running-1') {
             state = 'running-2';
-            playButton1.innerText = 'Start Tone';
+            playButton1.innerText = 'Play Tone';
             playButton2.innerText = 'Stop Tone';
-            labelSlider1.hidden = true;
-            labelAmplitude1.hidden = true;
-            labelSlider2.hidden = false;
-            labelAmplitude2.hidden = false;
+            divVolume1.hidden = true;
+            divVolume2.hidden = false;
         } else {
             gainNode.disconnect(audioCtx.destination);
             state = 'stopped';
-            playButton2.innerText = 'Start Tone';
-            labelSlider2.hidden = true;
-            labelAmplitude2.hidden = true;
+            playButton2.innerText = 'Play Tone';
+            divVolume2.hidden = true;
         }
     }, false);
 
