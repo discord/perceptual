@@ -3,6 +3,7 @@
     "outDir": "./dist/",
     "noImplicitAny": true,
     "module": "umd",
-    "target": "es6"
+    "target": "es6",
+    "declaration": true
   }
 }
