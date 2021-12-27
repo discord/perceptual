@@ -9,12 +9,11 @@ import { perceptualToAmplitude } from '@discordapp/perceptual';
     let gainNode = audioCtx.createGain();
 
     oscillatorNode.connect(gainNode);
-    gainNode.connect(audioCtx.destination);
 
     oscillatorNode.type = 'sine';
     oscillatorNode.frequency.value = 440;
     gainNode.gain.value = 0.5;
-
+    oscillator.start();
 
     const playButton1 = document.getElementById('play-button-1');
     const playButton2 = document.getElementById('play-button-2');
@@ -27,10 +26,10 @@ import { perceptualToAmplitude } from '@discordapp/perceptual';
     playButton1!.addEventListener('click', () => {
         audioCtx.resume();
         if (state === 'stopped') {
-            oscillatorNode.start();
+            gainNode.connect(audioCtx.destination);
             state = 'running';
         } else {
-            oscillatorNode.stop();
+            gainNode.disconnect(audioCtx.destination);
             state = 'stopped';
         }
     }, false);
@@ -38,10 +37,10 @@ import { perceptualToAmplitude } from '@discordapp/perceptual';
     playButton2!.addEventListener('click', () => {
         audioCtx.resume();
         if (state === 'stopped') {
-            oscillatorNode.start();
+            gainNode.connect(audioCtx.destination);
             state = 'running';
         } else {
-            oscillatorNode.stop();
+            gainNode.disconnect(audioCtx.destination);
             state = 'stopped';
         }
     }, false);
