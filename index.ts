@@ -93,7 +93,8 @@ function getDemoAmplitude(demos: DemoCollection, identifier: string): number {
                 const amp = getDemoAmplitude(demos, d) / 100;
                 gainNode.gain.exponentialRampToValueAtTime(amp, audioCtx.currentTime + 0.02);
             } else if (state === `running-${d}`) {
-                gainNode.gain.exponentialRampToValueAtTime(0, audioCtx.currentTime + 0.02);
+                gainNode.gain.exponentialRampToValueAtTime(0.0000001, audioCtx.currentTime + 0.02);
+                gainNode.gain.setValueAtTime(0, audioCtx.currentTime + 0.02);
                 state = 'stopped';
                 hideDemo(demos, d);
             } else {
