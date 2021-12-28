@@ -75,7 +75,7 @@ function getDemoAmplitude(demos: DemoCollection, identifier: string): number {
     oscillatorNode.connect(gainNode);
 
     oscillatorNode.type = 'sine';
-    oscillatorNode.frequency.value = 440;
+    oscillatorNode.frequency.value = 220;
     gainNode.gain.value = 0.5;
     oscillatorNode.start();
 
