@@ -1,7 +1,7 @@
 import { perceptualToAmplitude } from '@discordapp/perceptual';
 
 const demoList = ['1', '2'];
-const declickTime = 0.04;
+const declickTime = 0.01;
 
 interface Demo {
     [key: string]: HTMLElement;
@@ -92,16 +92,16 @@ function getDemoAmplitude(demos: DemoCollection, identifier: string): number {
                 state = `running-${d}`;
                 showDemo(demos, d);
                 const amp = getDemoAmplitude(demos, d) / 100;
-                gainNode.gain.linearRampToValueAtTime(amp, audioCtx.currentTime + declickTime);
+                gainNode.gain.setTargetAtTime(amp, audioCtx.currentTime, declickTime);
             } else if (state === `running-${d}`) {
-                gainNode.gain.linearRampToValueAtTime(0, audioCtx.currentTime + declickTime);
+                gainNode.gain.setTargetAtTime(0, audioCtx.currentTime, declickTime);
                 state = 'stopped';
                 hideDemo(demos, d);
             } else {
                 state = `running-${d}`;
                 showDemo(demos, d);
                 const amp = getDemoAmplitude(demos, d) / 100;
-                gainNode.gain.linearRampToValueAtTime(amp, audioCtx.currentTime + declickTime);
+                gainNode.gain.setTargetAtTime(amp, audioCtx.currentTime, declickTime);
             }
         }, false);
 
@@ -111,7 +111,7 @@ function getDemoAmplitude(demos: DemoCollection, identifier: string): number {
             demos[d].labelSlider.innerText = `Slider Position: ${pos.toFixed(3)}%`;
             demos[d].labelAmplitude.innerText = `Amplitude: ${amp.toFixed(3)}%`;
             if (state === `running-${d}`) {
-                gainNode.gain.linearRampToValueAtTime(amp / 100, audioCtx.currentTime + declickTime);
+                gainNode.gain.setTargetAtTime(amp / 100, audioCtx.currentTime, declickTime);
             }
         }, false);
     }
