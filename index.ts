@@ -35,14 +35,14 @@ function showDemo(demos: DemoCollection, identifier: string) {
     };
 
     const demo = demos[identifier]!;
-    demo.playButton.innerText = 'Stop Tone';
+    demo.labelPlayButton.innerText = 'Stop Tone';
     demo.iconPlayButton.classList.replace('fa-play', 'fa-stop');
     demo.divVolume.hidden = false;
 }
 
 function hideDemo(demos: DemoCollection, identifier: string) {
     const demo = demos[identifier]!;
-    demo.playButton.innerText = 'Play Tone';
+    demo.labelPlayButton.innerText = 'Play Tone';
     demo.iconPlayButton.classList.replace('fa-stop', 'fa-play');
     demo.divVolume.hidden = true;
 }
