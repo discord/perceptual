@@ -67,6 +67,10 @@ function getDemoAmplitude(demos: DemoCollection, identifier: string): number {
     return convertSliderPosition(pos, identifier);
 }
 
+function ampToDB(amp: number): number {
+    return 20 * Math.log10(amp);
+}
+
 (()=> {
     let audioCtx = new AudioContext();
 
@@ -109,7 +113,7 @@ function getDemoAmplitude(demos: DemoCollection, identifier: string): number {
             const pos = getDemoSliderPosition(demos, d);
             const amp = getDemoAmplitude(demos, d);
             demos[d].labelSlider.innerText = `Slider Position: ${pos.toFixed(3)}%`;
-            demos[d].labelAmplitude.innerText = `Amplitude: ${amp.toFixed(3)}%`;
+            demos[d].labelAmplitude.innerText = `Amplitude: ${amp.toFixed(3)}% (${ampToDB(amp).toFixed(1)} dB)`;
             if (state === `running-${d}`) {
                 gainNode.gain.setTargetAtTime(amp / 100, audioCtx.currentTime, declickTime);
             }
