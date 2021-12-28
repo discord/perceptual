@@ -74,10 +74,10 @@ function hideDemo(demos: DemoCollection, identifier: string) {
             } else if (state === `running-${d}`) {
                 gainNode.disconnect(audioCtx.destination);
                 state = 'stopped';
-                hideDemo(demos, '1');
+                hideDemo(demos, d);
             } else {
                 state = `running-${d}`;
-                showDemo(demos, '1');
+                showDemo(demos, d);
             }
         }, false);
     }
