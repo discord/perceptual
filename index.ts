@@ -63,7 +63,7 @@ function hideDemo(demos: DemoCollection, identifier: string) {
 
     let state = 'stopped';
 
-    demos[1].playButton.addEventListener('click', () => {
+    demos['1'].playButton.addEventListener('click', () => {
         audioCtx.resume();
         if (state === 'stopped') {
             gainNode.connect(audioCtx.destination);
@@ -79,7 +79,7 @@ function hideDemo(demos: DemoCollection, identifier: string) {
         }
     }, false);
 
-    demos[2].playButton.addEventListener('click', () => {
+    demos['2'].playButton.addEventListener('click', () => {
         audioCtx.resume();
         if (state === 'stopped') {
             gainNode.connect(audioCtx.destination);
@@ -95,20 +95,20 @@ function hideDemo(demos: DemoCollection, identifier: string) {
         }
     }, false);
 
-    demos[1].volume.addEventListener('input', () => {
-        const value = (demos[1].volume as HTMLInputElement).valueAsNumber;
-        demos[1].labelSlider.innerText = `Slider Position: ${value}%`;
-        demos[1].labelAmplitude.innerText = `Amplitude: ${value}%`;
+    demos['1'].volume.addEventListener('input', () => {
+        const value = (demos['1'].volume as HTMLInputElement).valueAsNumber;
+        demos['1'].labelSlider.innerText = `Slider Position: ${value}%`;
+        demos['1'].labelAmplitude.innerText = `Amplitude: ${value}%`;
         if (state === 'stopped' || state === 'running-1') {
             gainNode.gain.value = value / 100;
         }
     }, false);
 
-    demos[2].volume.addEventListener('input', () => {
-        const value = (demos[2].volume as HTMLInputElement).valueAsNumber;
+    demos['2'].volume.addEventListener('input', () => {
+        const value = (demos['2'].volume as HTMLInputElement).valueAsNumber;
         const amp = perceptualToAmplitude(value, 100);
-        demos[2].labelSlider.innerText = `Slider Position: ${value}%`;
-        demos[2].labelAmplitude.innerText = `Amplitude: ${amp.toFixed(3)}%`;
+        demos['2'].labelSlider.innerText = `Slider Position: ${value}%`;
+        demos['2'].labelAmplitude.innerText = `Amplitude: ${amp.toFixed(3)}%`;
         if (state === 'stopped' || state === 'running-2') {
             gainNode.gain.value = amp / 100;
         }
