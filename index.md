@@ -12,8 +12,8 @@ Convert volume slider fractions to amplitudes and nothing more.
       <input type="range" style="vertical-align: top;margin-left: 5px;margin-right: 5px;width: 252px;" id="input-volume-1">
       <i class="fa fa-volume-up" style="font-size: 24px;"></i>
     </div>
-    <div id="label-slider-1">Slider position: 50%</div>
-    <div id="label-amplitude-1">Amplitude: 50%</div>
+    <div id="label-slider-1">Slider position: 50.000%</div>
+    <div id="label-amplitude-1">Amplitude: 50.000%</div>
   </div>
 
 ## Perceptual
@@ -26,6 +26,6 @@ Convert volume slider fractions to amplitudes and nothing more.
       <input type="range" style="vertical-align: top;margin-left: 5px;margin-right: 5px;width: 252px;" id="input-volume-2">
       <i class="fa fa-volume-up" style="font-size: 24px;"></i>
     </div>
-    <div id="label-slider-2">Slider position: 50%</div>
-    <div id="label-amplitude-2">Amplitude: 50%</div>
+    <div id="label-slider-2">Slider position: 50.000%</div>
+    <div id="label-amplitude-2">Amplitude: 50.000%</div>
   </div>

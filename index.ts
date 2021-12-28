@@ -94,7 +94,7 @@ function convertSliderPosition(pos: number, identifier: string): number {
         demos[d].volume.addEventListener('input', () => {
             const value = (demos[d].volume as HTMLInputElement).valueAsNumber;
             const amp = convertSliderPosition(value, d);
-            demos[d].labelSlider.innerText = `Slider Position: ${value}%`;
+            demos[d].labelSlider.innerText = `Slider Position: ${value.toFixed(3)}%`;
             demos[d].labelAmplitude.innerText = `Amplitude: ${amp.toFixed(3)}%`;
             if (state === `running-${d}`) {
                 gainNode.gain.value = amp / 100;
