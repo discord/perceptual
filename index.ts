@@ -2,7 +2,7 @@ import { perceptualToAmplitude } from '@discordapp/perceptual';
 
 const demoList = ['1', '2'];
 const declickTime = 0.03;
-const ampScale = perceptualToAmplitude(0.5);
+const ampScale = perceptualToAmplitude(0.75);
 
 interface Demo {
     [key: string]: HTMLElement;
