@@ -29,3 +29,17 @@ Convert volume slider fractions to amplitudes and nothing more.
     <div id="label-slider-2">Slider position: 100.000%</div>
     <div id="label-amplitude-2">Amplitude: 100.000% (0.0 dB)</div>
   </div>
+
+## Half Range
+  Finally we try again with Perceptual but less range (30 dB).
+
+  <button style="width: 300px;" id="play-button-3"><i class="fa fa-play" style="margin-right: 5 px;padding-right: 5px;" id="icon-play-button-3"></i><span id="label-play-button-3">Play Tone</span></button>
+  <div id="div-volume-3" hidden=true>
+    <div style="width: 350px;">
+      <i class="fa fa-volume-down" style="/*! height: 100%; */ font-size: 24px;"></i>
+      <input type="range" style="vertical-align: top;margin-left: 5px;margin-right: 5px;width: 252px;" id="input-volume-3" value="100">
+      <i class="fa fa-volume-up" style="font-size: 24px;"></i>
+    </div>
+    <div id="label-slider-3">Slider position: 100.000%</div>
+    <div id="label-amplitude-3">Amplitude: 100.000% (0.0 dB)</div>
+  </div>

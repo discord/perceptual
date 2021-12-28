@@ -1,6 +1,6 @@
 import { perceptualToAmplitude } from '@discordapp/perceptual';
 
-const demoList = ['1', '2'];
+const demoList = ['1', '2', '3'];
 const declickTime = 0.03;
 const ampScale = perceptualToAmplitude(0.75);
 
@@ -55,6 +55,9 @@ function convertSliderPosition(pos: number, identifier: string): number {
     }
     if (identifier === '2') {
         return perceptualToAmplitude(pos, 100) * ampScale;
+    }
+    if (identifier === '3') {
+        return perceptualToAmplitude(pos, 100, 30) * ampScale;
     }
     return 0;
 }
