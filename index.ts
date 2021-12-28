@@ -57,6 +57,15 @@ function convertSliderPosition(pos: number, identifier: string): number {
     return 0;
 }
 
+function getDemoSliderPosition(demos: DemoCollection, identifier: string): number {
+    return (demos[identifier].volume as HTMLInputElement).valueAsNumber;
+}
+
+function getDemoAmplitude(demos: DemoCollection, identifier: string): number {
+    const pos = getDemoSliderPosition(demos, identifier);
+    return convertSliderPosition(pos, identifier);
+}
+
 (()=> {
     let audioCtx = new AudioContext();
 
@@ -81,6 +90,7 @@ function convertSliderPosition(pos: number, identifier: string): number {
                 gainNode.connect(audioCtx.destination);
                 state = `running-${d}`;
                 showDemo(demos, d);
+                gainNode.gain.value = getDemoAmplitude(demos, d) / 100;
             } else if (state === `running-${d}`) {
                 gainNode.disconnect(audioCtx.destination);
                 state = 'stopped';
@@ -88,13 +98,14 @@ function convertSliderPosition(pos: number, identifier: string): number {
             } else {
                 state = `running-${d}`;
                 showDemo(demos, d);
+                gainNode.gain.value = getDemoAmplitude(demos, d) / 100;
             }
         }, false);
 
         demos[d].volume.addEventListener('input', () => {
-            const value = (demos[d].volume as HTMLInputElement).valueAsNumber;
-            const amp = convertSliderPosition(value, d);
-            demos[d].labelSlider.innerText = `Slider Position: ${value.toFixed(3)}%`;
+            const pos = getDemoSliderPosition(demos, d);
+            const amp = getDemoAmplitude(demos, d);
+            demos[d].labelSlider.innerText = `Slider Position: ${pos.toFixed(3)}%`;
             demos[d].labelAmplitude.innerText = `Amplitude: ${amp.toFixed(3)}%`;
             if (state === `running-${d}`) {
                 gainNode.gain.value = amp / 100;
