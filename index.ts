@@ -14,6 +14,7 @@ function getDemos(): DemoCollection {
     const demos: DemoCollection = {};
 
     for (const d of demoList) {
+        demos[d] = {};
         demos[d].playButton = document.getElementById(`play-button-${d}`)!;
         demos[d].volume = document.getElementById(`input-volume-${d}`)!;
         demos[d].divVolume = document.getElementById(`div-volume-${d}`)!;
