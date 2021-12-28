@@ -64,37 +64,23 @@ function hideDemo(demos: DemoCollection, identifier: string) {
 
     let state = 'stopped';
 
-    demos['1'].playButton.addEventListener('click', () => {
-        audioCtx.resume();
-        if (state === 'stopped') {
-            gainNode.connect(audioCtx.destination);
-            state = 'running-1';
-            showDemo(demos, '1');
-        } else if (state === 'running-2') {
-            state = 'running-1';
-            showDemo(demos, '1');
-        } else {
-            gainNode.disconnect(audioCtx.destination);
-            state = 'stopped';
-            hideDemo(demos, '1');
-        }
-    }, false);
-
-    demos['2'].playButton.addEventListener('click', () => {
-        audioCtx.resume();
-        if (state === 'stopped') {
-            gainNode.connect(audioCtx.destination);
-            state = 'running-2';
-            showDemo(demos, '2');
-        } else if (state === 'running-1') {
-            state = 'running-2';
-            showDemo(demos, '2');
-        } else {
-            gainNode.disconnect(audioCtx.destination);
-            state = 'stopped';
-            hideDemo(demos, '2');
-        }
-    }, false);
+    for (const d in demos) {
+        demos[d].playButton.addEventListener('click', () => {
+            audioCtx.resume();
+            if (state === 'stopped') {
+                gainNode.connect(audioCtx.destination);
+                state = `running-${d}`;
+                showDemo(demos, d);
+            } else if (state === `running-${d}`) {
+                gainNode.disconnect(audioCtx.destination);
+                state = 'stopped';
+                hideDemo(demos, '1');
+            } else {
+                state = `running-${d}`;
+                showDemo(demos, '1');
+            }
+        }, false);
+    }
 
     demos['1'].volume.addEventListener('input', () => {
         const value = (demos['1'].volume as HTMLInputElement).valueAsNumber;
