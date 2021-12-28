@@ -13,7 +13,7 @@ Convert volume slider fractions to amplitudes and nothing more.
       <i class="fa fa-volume-up" style="font-size: 24px;"></i>
     </div>
     <div id="label-slider-1">Slider position: 100.000%</div>
-    <div id="label-amplitude-1">Amplitude: 100.000%</div>
+    <div id="label-amplitude-1">Amplitude: 100.000% (0.0 dB)</div>
   </div>
 
 ## Perceptual
@@ -27,5 +27,5 @@ Convert volume slider fractions to amplitudes and nothing more.
       <i class="fa fa-volume-up" style="font-size: 24px;"></i>
     </div>
     <div id="label-slider-2">Slider position: 100.000%</div>
-    <div id="label-amplitude-2">Amplitude: 100.000%</div>
+    <div id="label-amplitude-2">Amplitude: 100.000% (0.0 dB)</div>
   </div>
