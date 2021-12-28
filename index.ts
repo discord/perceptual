@@ -91,17 +91,16 @@ function getDemoAmplitude(demos: DemoCollection, identifier: string): number {
                 state = `running-${d}`;
                 showDemo(demos, d);
                 const amp = getDemoAmplitude(demos, d) / 100;
-                gainNode.gain.exponentialRampToValueAtTime(amp, audioCtx.currentTime + 0.02);
+                gainNode.gain.linearRampToValueAtTime(amp, audioCtx.currentTime + 0.02);
             } else if (state === `running-${d}`) {
-                gainNode.gain.exponentialRampToValueAtTime(0.0000001, audioCtx.currentTime + 0.02);
-                gainNode.gain.setValueAtTime(0, audioCtx.currentTime + 0.02);
+                gainNode.gain.linearRampToValueAtTime(0, audioCtx.currentTime + 0.02);
                 state = 'stopped';
                 hideDemo(demos, d);
             } else {
                 state = `running-${d}`;
                 showDemo(demos, d);
                 const amp = getDemoAmplitude(demos, d) / 100;
-                gainNode.gain.exponentialRampToValueAtTime(amp, audioCtx.currentTime + 0.02);
+                gainNode.gain.linearRampToValueAtTime(amp, audioCtx.currentTime + 0.02);
             }
         }, false);
 
@@ -111,7 +110,7 @@ function getDemoAmplitude(demos: DemoCollection, identifier: string): number {
             demos[d].labelSlider.innerText = `Slider Position: ${pos.toFixed(3)}%`;
             demos[d].labelAmplitude.innerText = `Amplitude: ${amp.toFixed(3)}%`;
             if (state === `running-${d}`) {
-                gainNode.gain.exponentialRampToValueAtTime(amp / 100, audioCtx.currentTime + 0.02);
+                gainNode.gain.linearRampToValueAtTime(amp / 100, audioCtx.currentTime + 0.02);
             }
         }, false);
     }
