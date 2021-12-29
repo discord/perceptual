@@ -2,13 +2,20 @@ Have you ever encountered a video or some music that was too loud and moved the 
 
 Convert volume slider fractions to amplitudes and nothing more.
 
-| :memo: iPhone users will need to turn on the ringer switch to use these demos.          |
-|:----------------------------------------------------------------------------------------|
+<table>
+ <thead>
+  <tr>
+    <td align="left">
+      📝 iPhone users will need to turn on the ringer switch to use these demos.
+    </td>
+  </tr>
+ </thead>
+</table>
 
 ## Slider Value
   First we will demonstrate what happens when we do connect the volume slider directly to the gain of the oscillator. You can use the left and right arrow keys to move the slider position one step at a time after you have clicked it once.
 
-  Note that the entire range from 75% to 100% yields a roughly equal loudness. While the amplitude does decreas, our decibel calculation shows that this part of the slider covers less than 3 dB of range.
+  Note that the entire range from 75% to 100% yields a roughly equal loudness. While the amplitude does decrease in this range, our decibel calculation shows that this part of the slider covers less than 3 dB of range.
 
   The slider range from 15% to 40% offers good control of loudness. Below 15%, the dB change per step becomes significantly greater.
 
