@@ -13,12 +13,6 @@ Convert volume slider fractions to amplitudes and nothing more.
 </table>
 
 ## Slider Value
-  First we will demonstrate what happens when we do connect the volume slider directly to the gain of the oscillator. You can use the left and right arrow keys to move the slider position one step at a time after you have clicked it once.
-
-  Note that the entire range from 75% to 100% yields a roughly equal loudness. While the amplitude does decrease in this range, our decibel calculation shows that this part of the slider covers less than 3 dB of range.
-
-  The slider range from 15% to 40% offers good control of loudness. Below 15%, the dB change per step becomes significantly greater.
-
   <button style="width: 300px;" id="play-button-1"><i class="fa fa-play" style="margin-right: 5 px;padding-right: 5px;" id="icon-play-button-1"></i><span id="label-play-button-1">Play Tone</span></button>
   <div id="div-volume-1" hidden=true>
     <div style="width: 350px;">
@@ -30,13 +24,13 @@ Convert volume slider fractions to amplitudes and nothing more.
     <div id="label-amplitude-1">Amplitude: 100.000% (0.0 dB)</div>
   </div>
 
+  First we will demonstrate what happens when we do connect the volume slider directly to the gain of the oscillator. You can use the left and right arrow keys to move the slider position one step at a time after you have clicked it once.
+
+  Note that the entire range from 75% to 100% yields a roughly equal loudness. While the amplitude does decrease in this range, our decibel calculation shows that this part of the slider covers less than 3 dB of range.
+
+  The slider range from 15% to 40% offers good control of loudness. Below 15%, the dB change per step becomes significantly greater.
+
 ## Perceptual
-  Now we will demonstrate again using Perceptual's amplitude conversion.
-
-  We can see from the dB conversion that Perceptual has translated our slider into a 40 dB range. Each step reduces the volume by 0.4 dB. This range is a configurable parameter of Perceptual. By choosing 40 dB we get the same dynamic range of the first example, so it is easier to compare the two demos.
-
-  By stepping down through the full range, we can see that the perceived loudness adjusts smoothly. With the slider set to 50%, the tone is much softer than it was at 50% in the first demo.
-
   <button style="width: 300px;" id="play-button-2"><i class="fa fa-play" style="margin-right: 5 px;padding-right: 5px;" id="icon-play-button-2"></i><span id="label-play-button-2">Play Tone</span></button>
   <div id="div-volume-2" hidden=true>
     <div style="width: 350px;">
@@ -47,3 +41,9 @@ Convert volume slider fractions to amplitudes and nothing more.
     <div id="label-slider-2">Slider position: 100.000%</div>
     <div id="label-amplitude-2">Amplitude: 100.000% (0.0 dB)</div>
   </div>
+
+  Now we will demonstrate again using Perceptual's amplitude conversion.
+
+  We can see from the dB conversion that Perceptual has translated our slider into a 40 dB range. Each step reduces the volume by 0.4 dB. This range is a configurable parameter of Perceptual. By choosing 40 dB we get the same dynamic range of the first example, so it is easier to compare the two demos.
+
+  By stepping down through the full range, we can see that the perceived loudness adjusts smoothly. With the slider set to 50%, the tone is much softer than it was at 50% in the first demo.
