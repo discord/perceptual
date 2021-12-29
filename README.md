@@ -1,7 +1,7 @@
 perceptual
 =============
 
-Have you ever encountered a website with video or music that was too loud and moved the volume slider down halfway, only to discover it was still basically as loud as before you moved the slider? The most common approach taken by developers building these sliders is to apply the position of the slider as a multiplier on the sound’s amplitude. Unfortunately, this approach doesn’t actually yield even loudness changes across the slider’s full range. Enter perceptual.
+Have you ever encountered a website with video or music that was too loud and moved the volume slider down halfway, only to discover it was still basically as loud as before you moved the slider? The most common approach taken by developers building these interfaces is to apply the position of the slider as a multiplier on the sound’s amplitude. Unfortunately, this approach doesn’t yield even loudness changes across the slider’s full range. Enter perceptual.
 
 Convert volume slider fractions to amplitudes and nothing more.
 
