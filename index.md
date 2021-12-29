@@ -26,9 +26,9 @@ Have you ever encountered a website with video or music that was too loud and mo
 
   First we will demonstrate what happens when we do connect the volume slider directly to the amplitude of the oscillator. In this demo, you can use the left and right arrow keys to move the slider position one step at a time after you have started the tone and clicked the slider once.
 
-  Note that the entire range from 75% to 100% yields a roughly equal loudness. While the amplitude does decrease in this range, our decibel calculation shows that this part of the slider covers less than 3 dB of range.
+  Note that the entire slider range from 75% to 100% yields a roughly equal loudness. While the amplitude does change slightly in this range, our decibel calculation shows that this part of the slider covers less than 3 dB of range.
 
-  The slider range from 15% to 40% offers good control of loudness. Below 15%, the dB change per step becomes significantly greater.
+  The slider range from 15% to 40% offers good control of loudness. Below 15%, the dB change per step becomes significantly greater, giving us too few steps between different loudness levels.
 
 ## Perceptual
   <button style="width: 300px;" id="play-button-2"><i class="fa fa-play" style="margin-right: 5 px;padding-right: 5px;" id="icon-play-button-2"></i><span id="label-play-button-2">Play Tone</span></button>
