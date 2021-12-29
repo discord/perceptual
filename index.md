@@ -24,7 +24,7 @@ Have you ever encountered a website with video or music that was too loud and mo
     <div id="label-amplitude-1">Amplitude: 100.000% (0.0 dB)</div>
   </div>
 
-  First we will demonstrate what happens when we do connect the volume slider directly to the gain of the oscillator. You can use the left and right arrow keys to move the slider position one step at a time after you have clicked it once.
+  First we will demonstrate what happens when we do connect the volume slider directly to the amplitude of the oscillator. In this demo, you can use the left and right arrow keys to move the slider position one step at a time after you have started the tone and clicked the slider once.
 
   Note that the entire range from 75% to 100% yields a roughly equal loudness. While the amplitude does decrease in this range, our decibel calculation shows that this part of the slider covers less than 3 dB of range.
 
