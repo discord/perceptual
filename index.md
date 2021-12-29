@@ -44,6 +44,6 @@ Have you ever encountered a website with video or music that was too loud and mo
 
   Now we will demonstrate again using Perceptual's amplitude conversion.
 
-  We can see from the dB conversion that Perceptual has translated our slider into a 40 dB range. Each step reduces the volume by 0.4 dB. This range is a configurable parameter of Perceptual. By choosing 40 dB we get the same dynamic range of the first example, so it is easier to compare the two demos.
+  We can see from the dB conversion that Perceptual has translated our slider into a 40 dB range. Each step reduces the volume by 0.4 dB. This range is a configurable parameter of Perceptual. By choosing 40 dB of range here we get the same dynamic range of the first example, so it is easier to compare the two demos.
 
   By stepping down through the full range, we can see that the perceived loudness adjusts smoothly. With the slider set to 50%, the tone is much softer than it was at 50% in the first demo.
