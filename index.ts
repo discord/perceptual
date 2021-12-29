@@ -54,7 +54,7 @@ function convertSliderPosition(pos: number, identifier: string): number {
         return pos * ampScale;
     }
     if (identifier === '2') {
-        return perceptualToAmplitude(pos, 100) * ampScale;
+        return perceptualToAmplitude(pos, 100, 40) * ampScale;
     }
     return 0;
 }
